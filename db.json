@@ -1,0 +1,28 @@
+
+{
+    "solicitudes": [
+      {
+        "id": 1,
+        "jugador": "Juan",
+        "intentos": "5"
+      },
+      {
+        "id": 2,
+        "jugador": "Ana",
+        "intentos": "3"
+      },
+      {
+        "id": 3,
+        "jugador": "Carlos",
+        "intentos": "7"
+      }, {
+        "id": 4,
+        "jugador": "Rodri",
+        "intentos": "2"
+      }, {
+        "id": 5,
+        "jugador": "Balto",
+        "intentos": "8"
+      }
+    ]
+  }

@@ -1,0 +1,43 @@
+header{
+    text-align: center;
+}
+
+.fila-primero {
+    background-color: gold ;
+    padding: 20px 0;
+    font-weight: bolder;
+}
+
+.fila-segundo {
+    background-color: silver ;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+.fila-tercero {
+    background-color: #cd7f32 ; 
+    padding: 5px 0;
+    font-weight: bold;
+}
+
+.tablaRanking {
+    border: 2px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#contenidoRanking{
+    text-align: center;
+}
+
+
+
+.tablaRanking thead th{
+    padding: 10px;
+    background-color: bisque;
+}
+
+.tablaRanking thead tr {
+    border: 2px solid black;
+}
+
