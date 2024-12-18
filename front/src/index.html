@@ -14,53 +14,38 @@
 </head>
 
 <body>
-    <div class="contenedor mt-5 mx-5">
-        <header>
-            <h1 class="mb-4">Adivina el número aleatorio entre 1 y 100</h1>
-        </header>
-
-        <div class="row">
-            <div class="col-md-6">
-                <form id="formularioNumero">
-                    <div class="mb-3">
-                        <label for="numero" class="form-label">Número a adivinar:</label>
-                        <input type="number" class="form-control" name="numero" id="numero" max="100" min="1" required>
-                        <div class="form-text">Introduce un número entre 1 y 100.</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary botonComprobar w-100">Comprobar</button>
-                </form>
-                <div class="intentos mt-5">
-                    <p>Llevas <span class="numeroDeIntentos">0</span> intentos</p>
-                    <p class="numerosProbados"></p>
-                </div>
-            </div>
-            <div class="col-md-2">
-            </div>
-
-            <div class="col-md-4" id="contenidoRanking">
-                <h3>Ranking de Jugadores</h3>
-                <table class="tablaRanking">
-                    <thead>
-                        <tr>
-                            <th scope="col">Jugador</th>
-                            <th scope="col">Intentos</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ranking">
-                    </tbody>
-                </table>
-            </div>
+    <header>
+        <h1>Panel de Administración de Tienda</h1>
+    </header>
+    
+    <div class="container">
+        <div class="form-container">
+            <h2>Añadir Producto</h2>
+            <input type="text" id="productId" placeholder="ID del producto" />
+            <input type="text" id="productName" placeholder="Nombre del producto" />
+            <input type="number" id="productPrice" placeholder="Precio del producto" />
+            <input type="number" id="productStock" placeholder="Cantidad en stock" />
+            <input type="submit" value="Añadir Producto" onclick="addProduct()" />
         </div>
+    
+        <div class="alert" id="alertMessage"></div>
+    
+        <h2>Lista de Productos</h2>
+        <table id="productTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los productos se añadirán aquí dinámicamente -->
+            </tbody>
+        </table>
     </div>
-
-     <!-- Formulario para ingresar el nombre cuando el jugador adivina el número -->
-     <div id="FormularioNombreJugador" class="mt-4 mx-3" style="display: none;" >
-        <h1 style="text-align: center;" class="my-4">¡Enhorabuena! Has acertado el número</h1>
-        <h4>Ingresa tu nombre:</h4>
-        <input type="text" id="nombreJugador" class="form-control" placeholder="Escribe tu nombre">
-        <button id="guardarRanking" class="btn btn-primary mt-2">Guardar</button>
-    </div>    
-
 </body>
 
 </html>

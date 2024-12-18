@@ -28,7 +28,11 @@ public class App {
             switch (opcion) {
                 case 1:
                     Map<Long, Producto> productos = controller.obtenerProductos();
-                    productos.values().forEach(System.out::println);
+                    if (productos.isEmpty()) {
+                        System.out.println("No hay productos disponibles.");
+                    } else {
+                        productos.values().forEach(System.out::println);
+                    }
                     break;
 
                 case 2:
@@ -44,7 +48,8 @@ public class App {
                     System.out.print("Cantidad del producto: ");
                     int cantidad = scanner.nextInt();
                     Producto nuevoProducto = new Producto(id, nombre, descripcion, precio, cantidad);
-                    System.out.println(controller.crearProducto(nuevoProducto));
+                    String respuesta = controller.crearProducto(nuevoProducto);
+                    System.out.println(respuesta);  // Muestra si el producto se creó correctamente
                     break;
 
                 case 3:

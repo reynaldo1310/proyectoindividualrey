@@ -38,22 +38,22 @@ public class ProductoControllerTest {
         productoB.aumentarStock(10);
         assertEquals(15, productoB.getCantidad());
     }
-
     @Test
     void testComprarProducto() {
-        // Asegurarse de que el stock inicial de productoA es 10
-        assertEquals(10, productoA.getCantidad());
-    
-        // Realizar la compra de 5 unidades
-        String respuestaCompra = productoController.comprarProducto(1L, 5);
-        assertEquals("Compra realizada con éxito. Producto: Coca-Cola, Cantidad: 5", respuestaCompra);
-    
-        // Verificar que el stock de productoA se ha reducido a 5
-        assertEquals(5, productoA.getCantidad());
-    
-        // Intentar comprar más de lo que hay en stock
-        String respuestaSinStock = productoController.comprarProducto(1L, 6);
-        assertEquals("No hay suficiente stock para realizar la compra.", respuestaSinStock);
+        // Suponemos que el producto con ID 1 tiene 10 unidades disponibles (según el constructor).
+        ProductoController productoController = new ProductoController();
+        
+        // Caso donde hay suficiente stock
+        String respuestaCompra = productoController.comprarProducto(1L, 5); // Intentamos comprar 5 unidades del Producto A
+        assertEquals("Compra realizada con éxito. Producto: Producto A, Cantidad: 5", respuestaCompra);
+        
+        // Verificamos que el stock se haya reducido correctamente
+        Producto producto = productoController.obtenerProducto(1L);
+        assertEquals(5, producto.getCantidad()); // El stock debería ser 5, ya que compramos 5 unidades
+        
+        // Caso donde no hay suficiente stock
+        String respuestaCompraInsuficiente = productoController.comprarProducto(1L, 6); // Intentamos comprar más unidades de las disponibles
+        assertEquals("No hay suficiente stock para realizar la compra. Stock disponible: 5", respuestaCompraInsuficiente);
     }
 
     @Test

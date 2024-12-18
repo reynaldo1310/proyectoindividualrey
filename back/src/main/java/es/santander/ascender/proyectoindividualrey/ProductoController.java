@@ -10,7 +10,7 @@ public class ProductoController {
     public ProductoController() {
         // Inicializando productos con datos ficticios.
         productos.put(1L, new Producto(1L, "Producto A", "Descripción A", 100.0f, 10));
-        productos.put(2L, new Producto(2L, "Producto B", "Descripción B", 150.0f, 0));
+        productos.put(2L, new Producto(2L, "Producto B", "Descripción B", 150.0f, 0)); // Producto sin stock
     }
 
     public Producto obtenerProducto(long id) {
@@ -55,11 +55,12 @@ public class ProductoController {
             return "Producto no encontrado.";
         }
         if (producto.getCantidad() < cantidad) {
-            return "No hay suficiente stock para realizar la compra.";
+            return "No hay suficiente stock para realizar la compra. Stock disponible: " + producto.getCantidad();
         }
         producto.setCantidad(producto.getCantidad() - cantidad);
         return "Compra realizada con éxito. Producto: " + producto.getNombre() + ", Cantidad: " + cantidad;
     }
+    
 
     public String aumentarStockProducto(long id, int cantidad) {
         Producto producto = productos.get(id);

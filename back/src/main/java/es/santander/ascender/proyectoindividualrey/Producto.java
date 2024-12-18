@@ -57,5 +57,9 @@ public class Producto {
             this.cantidad += cantidad;
         }
     }
+    @Override
+    public String toString() {
+    return "ID: " + id + ", Nombre: " + nombre + ", Descripción: " + descripcion + ", Precio: " + precio + ", Cantidad: " + cantidad;
+    }   
 }
 
